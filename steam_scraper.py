@@ -3,6 +3,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.by import By
+import os
 from time import sleep
 
 
@@ -10,8 +11,7 @@ class SteamScraper():
 
     def __init__(self, url):
         self.url = url
-        service = Service(
-            r"C:\Users\Leonardo\Downloads\chromedriver_win32\chromedriver.exe")
+        service = Service(os.environ.get("CHROME_DRIVER_PATH"))
         self.driver: WebDriver = Chrome(service=service)
 
     def get_tables(self) -> list[WebElement]:

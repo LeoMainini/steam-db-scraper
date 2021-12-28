@@ -1,1 +1,5 @@
 /__pycache__
+results/hot-releases.csv
+results/most-played.csv
+results/releases.csv
+results/trending.csv
